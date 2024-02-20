@@ -8,11 +8,11 @@ function App() {
   const [newActivity, setNewActivity] = useState('');
 
   useEffect(() => {
-    activityService
+    /* activityService
     .getAllActivities()
     .then(data => {
       setActivities(data.activities)
-    })
+    }) */
 
     activityService
     .getNewActivity()
@@ -30,14 +30,9 @@ function App() {
   }
 
   const handleAddActivity = newActivity => {
-    activityService
-    .addActivity({
-      activity: newActivity,
-    })
-    .then(() => {
-      setActivities([...activities, {activity: newActivity}])
-    })
-
+    //let activity = {activity: newActivity} 
+    setActivities([...activities, {activity: newActivity}])
+    
     activityService
     .getNewActivity()
     .then(data => {
