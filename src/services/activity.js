@@ -6,7 +6,7 @@ import axios from "axios";
 
 //const baseUrl = 'api/activities';
 //const baseUrl = 'http://localhost:5000/';
-const baseUrl = 'https://node-bored-api.onrender.com/';
+const baseUrl = 'https://node-bored-api.onrender.com/activity';
 
 const getAllActivities = async () => {
     const request = axios.get(baseUrl);
@@ -16,7 +16,7 @@ const getAllActivities = async () => {
 }
 
 const getNewActivity = () => {
-    const request = axios.get(`${baseUrl}/new}`);
+    const request = axios.get(baseUrl);
     return request.then(response => response.data);
 }
 
